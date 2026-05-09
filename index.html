@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pour Toi 💖</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <canvas id="confettiCanvas"></canvas>
+  <div id="stars"></div>
+
+  <audio id="music" loop>
+    <source src="assets/music.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- INTRO -->
+  <div id="intro" class="screen active">
+    <div class="card">
+      <div class="badge">🎂 Surprise</div>
+      <h1 class="title">Une surprise pour toi 💖</h1>
+      <div id="typingText" class="typing-box"></div>
+      <button onclick="showNameStep()" class="btn">Continuer ✨</button>
+    </div>
+  </div>
+
+  <!-- NOM -->
+  <div id="nameScreen" class="screen">
+    <div class="card">
+      <div class="badge">🌸 Étape 1</div>
+      <h2 class="title">Ton prénom 💫</h2>
+      <input id="nameInput" type="text" placeholder="Entre ton prénom..." class="input" />
+      <button onclick="validateName()" class="btn">Valider 💕</button>
+    </div>
+  </div>
+
+  <!-- PASSWORD -->
+  <div id="passwordScreen" class="screen">
+    <div class="card">
+      <div class="badge">🔐 Étape 2</div>
+      <h2 class="title">Code Secret 🗝️</h2>
+      <p class="subtitle">Tu le sais forcément...</p>
+      <input id="passwordInput" type="password" placeholder="Le code secret..." class="input" />
+      <button onclick="validatePassword()" class="btn">Entrer 🚪</button>
+    </div>
+  </div>
+
+  <!-- QUIZ -->
+  <div id="quizScreen" class="screen">
+    <div class="card large">
+      <div class="badge">💝 Quiz</div>
+      <h2 class="title">Petit Quiz 🧠</h2>
+      <div id="progressBar"><div id="progressFill"></div></div>
+      <div id="questionContainer"></div>
+      <div id="feedbackBox" class="feedback-box hidden"></div>
+      <button id="quizBtn" onclick="nextQuestion()" class="btn">Valider 💖</button>
+    </div>
+  </div>
+
+  <!-- TYPING SCREEN (avant vidéo) -->
+  <div id="typingScreen" class="screen">
+    <div class="card">
+      <div class="badge">💌 Un message</div>
+      <h2 class="title">Pour toi 🌹</h2>
+      <div id="preVideoText" class="typing-box large-typing"></div>
+      <button id="typingNextBtn" onclick="showVideoScreen()" class="btn hidden">Voir la vidéo 🎬</button>
+    </div>
+  </div>
+
+  <!-- VIDEO -->
+  <div id="videoScreen" class="screen">
+    <div class="card video-card">
+      <div class="badge">🎬 Surprise</div>
+      <h2 class="title">Bravo mon cœur 🏆</h2>
+      <p class="subtitle">Tu as traversé toutes les questions...</p>
+      <video controls class="video-player" id="mainVideo">
+        <source src="assets/final-video.mp4" type="video/mp4">
+      </video>
+      <button onclick="showFinal()" class="btn">Continuer 💫</button>
+    </div>
+  </div>
+
+  <!-- FINAL -->
+  <div id="finalScreen" class="screen">
+    <div class="card final-card">
+      <div class="sparkles">✨ ✨ ✨</div>
+      <h1 class="final-title">Joyeux Anniversaire 🎂</h1>
+      <p class="final-subtitle">Une petite partie de mon cœur...</p>
+      <div class="heart-big">💖</div>
+      <p class="final-quote">Tu mérites tout le bonheur du monde</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
