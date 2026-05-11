@@ -4,8 +4,7 @@
 
 const introText = `Your gift 😏💖`;
 
-const preVideoMessage = `Avant de regarder cette vidéo...\n\n le texte d'anniv que tu mettras s'affichera ainsi`;
-
+const preVideoMessage = `Tu sais ce qui est fou ?\n\nTout a commencé sans importance. Juste un sourire qui t'intriguait, et moi qui ne te calculais même pas. On ne se connaissait pas vraiment. La vie nous a même séparés une première fois, sans qu'on ait eu le temps de créer quoi que ce soit.\n\nEt pourtant, on s'est retrouvés. Comme si quelque chose insistait, pour qu'on se donne une vraie chance. Quand tu es revenu dans ma vie, je n'étais pas prête, j'avais peur, j'étais encore fragile… Et toi aussi, tu prenais ton temps. Mais entre les appels, les taquineries, les heures passées à parler de tout et de rien, sans même s'en rendre compte tu es devenu important. Puis essentiel.\n\nEt le 16 octobre 2022, j'ai fait la plus belle folie de ma vie : te dire ce que je ressentais. Et depuis ce jour Steev, rien n'est plus pareil.\n\nOn n'est pas parfaits. La distance nous fatigue parfois, la vie nous éloigne un peu, on s'embrouille, on se perd… Mais on ne se quitte jamais. On se retrouve toujours. Et ça, ça veut tout dire.\n\nParce qu'au fond, peu importe les kilomètres ou les silences, c'est toi que je choisis. Encore et encore. Tu es mon apaisement et mon trouble à la fois. Mon Tentazione ardente, The other me… mais surtout, la personne qui compte vraiment.\n\nAujourd'hui, pour ton anniversaire, je ne veux pas juste te dire "joyeux anniversaire". Je veux te rappeler que tu es une des plus belles choses qui me soit arrivée. Que malgré tout, malgré la distance, malgré les hauts et les bas, je suis là. Et je le serai encore.\n\nJe ne sais pas de quoi demain sera fait… mais ce que je sais, c'est que depuis toi, j'ai appris à aimer sans retenue. J'ai appris à aimer différemment. Plus vrai, plus fort.\n\nJoyeux anniversaire, mon Steev. ❤️`;
 const correctPassword = "ACTS0603";
 
 const questions = [
@@ -252,9 +251,9 @@ function nextQuestion() {
     }
 
     feedbackBox.textContent  = good ? q.success : q.fail;
-    feedbackBox.className    = "feedback-box " + (good ? "correct" : "wrong");
-    answered                 = true;
-    quizBtn.textContent      = "Question suivante ➜";
+feedbackBox.className    = "feedback-box " + (good ? "correct" : "wrong");
+answered                 = good;
+quizBtn.textContent      = good ? "Question suivante ➜" : "Mauvaise réponse, fais un autre choix";
     return;
   }
 
